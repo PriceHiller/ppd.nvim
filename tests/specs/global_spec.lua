@@ -1,0 +1,10 @@
+local ppd = require("ppd")
+
+describe("Global Scoped", function()
+    before_each(function() end)
+    describe("pushd", function()
+        it("should set the correct directory", function()
+            assert.True(false)
+        end)
+    end)
+end)
