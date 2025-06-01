@@ -19,15 +19,9 @@ function DirStack.new(scope)
         "tab",
         "window",
     }
-    vim.validate {
-        scope = {
-            scope,
-            function(sc)
-                return vim.tbl_contains(valid_scopes, sc)
-            end,
-            "a valid DirStack scope",
-        },
-    }
+    vim.validate("scope", scope, function(sc)
+        return vim.list_contains(valid_scopes, sc)
+    end, "a valid DirStack scope")
 
     local self = setmetatable({
         scope = scope,
